@@ -12,7 +12,7 @@ isGrounded = false;
 // Stamina
 staminaMax = 100;
 stamina = staminaMax;
-staminaDrainPerJump = 20;   // koster ved hvert hop/klatre-træk
+staminaDrainPerJump = 10;   // koster ved hvert hop/klatre-træk
 staminaRegenSpd = 0.4;      // pr. frame når man regenererer
 staminaRegenDelay = 30;     // frames man skal vente efter sidste brug, før regen starter
 staminaRegenTimer = 0;
