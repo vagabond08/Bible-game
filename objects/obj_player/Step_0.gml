@@ -2,6 +2,8 @@ rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right);
 leftKey = keyboard_check(ord("A")) or keyboard_check(vk_left);
 jumpKey = keyboard_check(ord("W")) or keyboard_check(ord(" ")) or keyboard_check(vk_up);
 
+collision = [obj_ground, obj_ground2]
+
 // Horizontal movement
 var _horizKey = rightKey - leftKey;
 xspd = _horizKey * moveSpd;
@@ -38,16 +40,16 @@ if (stamina <= staminaMax * 0.2) {
 }
 
 // Move + collision (eksempel med et "Ground" objekt)
-if (place_meeting(x + xspd, y, obj_ground)) {
-    while (!place_meeting(x + sign(xspd), y, obj_ground)) {
+if (place_meeting(x + xspd, y, collision)) {
+    while (!place_meeting(x + sign(xspd), y, collision)) {
         x += sign(xspd);
     }
     xspd = 0;
 }
 x += xspd;
 
-if (place_meeting(x, y + yspd, obj_ground)) {
-    while (!place_meeting(x, y + sign(yspd), obj_ground)) {
+if (place_meeting(x, y + yspd, collision)) {
+    while (!place_meeting(x, y + sign(yspd), collision)) {
         y += sign(yspd);
     }
     yspd = 0;
