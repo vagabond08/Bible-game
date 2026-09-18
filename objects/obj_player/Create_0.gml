@@ -20,5 +20,15 @@ staminaRegenTimer = 0;
 staminaDisplay = stamina;   // bruges til smooth bar-animation
 staminaBarShakeAmount = 0;  // lille shake-effekt når man er ved at løbe tør
 
+cameraState = "intro";
+
+var _viewH = camera_get_view_height(view_camera[0]);
+introStartY = 0;
+introEndY = clamp(y - _viewH * 0.7, 0, room_height - _viewH);
+introSpd = 0.02;
+introProgress = 0;
+
+camera_set_view_pos(view_camera[0], 0, introStartY);
+
 
     //tilecollision = layer_tilemap_get_id("Tiles_walls")

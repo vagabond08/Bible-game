@@ -4,13 +4,17 @@ jumpKey = keyboard_check(ord("W")) or keyboard_check(ord(" ")) or keyboard_check
 
 collision = [obj_ground, obj_ground2]
 
-// Horizontal movement
-var _horizKey = rightKey - leftKey;
-xspd = _horizKey * moveSpd;
-
 // Gravity
 yspd += grav;
 yspd = min(yspd, maxFallSpd);
+
+if (cameraState == "intro") {
+    xspd = 0;
+    yspd = 0;
+} else {
+    // Horizontal movement
+var _horizKey = rightKey - leftKey;
+xspd = _horizKey * moveSpd;
 
 // Jump / climb kræver stamina
 if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
@@ -19,6 +23,8 @@ if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
     stamina -= staminaDrainPerJump;
     staminaRegenTimer = staminaRegenDelay;
 }
+}
+
 
 // Regen kun når man IKKE lige har brugt stamina, og man rører jorden
 if (staminaRegenTimer > 0) {
@@ -63,19 +69,21 @@ y += yspd;
 #region Camera
     var _viewW = camera_get_view_width(view_camera[0]);
     var _viewH = camera_get_view_height(view_camera[0]);
+    var _camX = 0;
 
-    // X er altid centreret/fast - vis hele bjergets bredde
-    var _camX = 0; // eller room_width/2 - _viewW/2 hvis du vil centrere
-
-    // Y følger spilleren, med et offset så de ikke sidder helt i bunden
-    var _targetY = obj_player.y - _viewH * 0.7;
-
-    // Clamp så kameraet ikke scroller udenfor rummet foroven/forneden
-    _targetY = clamp(_targetY, 0, room_height - _viewH);
-
-    // Smooth follow (lerp) i stedet for hård snap
-    var _camY = camera_get_view_y(view_camera[0]);
-    _camY += (_targetY - _camY) * 0.1;
-
-    camera_set_view_pos(view_camera[0], _camX, _camY);
+    if (cameraState == "intro") {
+        introProgress += introSpd;
+        introProgress = clamp(introProgress, 0, 1);
+        var _t = introProgress;
+        var _eased = _t * _t * (3 - 2 * _t);
+        var _camY = lerp(introStartY, introEndY, _eased);
+        camera_set_view_pos(view_camera[0], _camX, _camY);
+        if (introProgress >= 1) cameraState = "follow";
+    }
+    else if (cameraState == "follow") {
+        var _targetY = clamp(y - _viewH * 0.7, 0, room_height - _viewH);
+        var _camY = camera_get_view_y(view_camera[0]);
+        _camY += (_targetY - _camY) * 0.1;
+        camera_set_view_pos(view_camera[0], _camX, _camY);
+    }
 #endregion
