@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprGround",
-    "path":"sprites/sprGround/sprGround.yy",
+    "name":"sprPlayer",
+    "path":"sprites/sprPlayer/sprPlayer.yy",
   },
   "spriteMaskId":null,
   "visible":true,
