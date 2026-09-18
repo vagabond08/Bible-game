@@ -14,7 +14,7 @@ staminaMax = 100;
 stamina = staminaMax;
 staminaDrainPerJump = 10;   // koster ved hvert hop/klatre-træk
 staminaRegenSpd = 0.4;      // pr. frame når man regenererer
-staminaRegenDelay = 30;     // frames man skal vente efter sidste brug, før regen starter
+staminaRegenDelay = 90;     // frames man skal vente efter sidste brug, før regen starter
 staminaRegenTimer = 0;
 
 staminaDisplay = stamina;   // bruges til smooth bar-animation
