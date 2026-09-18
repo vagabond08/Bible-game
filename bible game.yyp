@@ -27,6 +27,7 @@
     {"id":{"name":"spr_Ground","path":"sprites/spr_Ground/spr_Ground.yy",},},
     {"id":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},},
     {"id":{"name":"spr_Rock","path":"sprites/spr_Rock/spr_Rock.yy",},},
+    {"id":{"name":"spr_vines_middle","path":"sprites/spr_vines_middle/spr_vines_middle.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
