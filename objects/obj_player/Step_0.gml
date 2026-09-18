@@ -1,6 +1,6 @@
 rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right);
 leftKey = keyboard_check(ord("A")) or keyboard_check(vk_left);
-jumpKey = keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_up);
+jumpKey = keyboard_check(ord("W")) or keyboard_check(ord(" ")) or keyboard_check(vk_up);
 
 // Horizontal movement
 var _horizKey = rightKey - leftKey;
