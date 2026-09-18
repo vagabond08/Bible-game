@@ -58,3 +58,24 @@ if (place_meeting(x, y + yspd, collision)) {
     isGrounded = false;
 }
 y += yspd;
+
+// Camera follow - kun vertikalt
+#region Camera
+    var _viewW = camera_get_view_width(view_camera[0]);
+    var _viewH = camera_get_view_height(view_camera[0]);
+
+    // X er altid centreret/fast - vis hele bjergets bredde
+    var _camX = 0; // eller room_width/2 - _viewW/2 hvis du vil centrere
+
+    // Y følger spilleren, med et offset så de ikke sidder helt i bunden
+    var _targetY = obj_player.y - _viewH * 0.7;
+
+    // Clamp så kameraet ikke scroller udenfor rummet foroven/forneden
+    _targetY = clamp(_targetY, 0, room_height - _viewH);
+
+    // Smooth follow (lerp) i stedet for hård snap
+    var _camY = camera_get_view_y(view_camera[0]);
+    _camY += (_targetY - _camY) * 0.1;
+
+    camera_set_view_pos(view_camera[0], _camX, _camY);
+#endregion
