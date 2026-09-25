@@ -3,7 +3,7 @@ var _dt = delta_time / 1000000;
 rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right);
 leftKey = keyboard_check(ord("A")) or keyboard_check(vk_left);
 jumpKey = keyboard_check_pressed(ord("W")) or keyboard_check_pressed(ord(" ")) or keyboard_check_pressed(vk_up);
-secretKey = keyboard_check_pressed(ord("O"));
+secretKey = keyboard_check(ord("O"));
 
 collision = [obj_ground, obj_ground2]
 
@@ -29,7 +29,7 @@ if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
 }
 
 if(secretKey) {
-	yspd = -jumpSpd * 2
+	yspd = -jumpSpd*0.5
 }
 
 // Regen kun når man IKKE lige har brugt stamina, og man rører jorden
