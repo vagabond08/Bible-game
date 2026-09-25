@@ -1,6 +1,6 @@
 // Variables for movement
 moveSpd = 4;
-jumpSpd = 10;
+jumpSpd = 15;
 grav = 0.5;
 maxFallSpd = 24;
 
@@ -8,13 +8,15 @@ xspd = 0;
 yspd = 0;
 
 isGrounded = false;
+CoyoteTimer = 0;
+CoyoteMAX = 0.2;
 
 // Stamina
 staminaMax = 100;
 stamina = staminaMax;
 staminaDrainPerJump = 10;   // koster ved hvert hop/klatre-træk
-staminaRegenSpd = 0.5;      // pr. frame når man regenererer
-staminaRegenDelay = 60;     // frames man skal vente efter sidste brug, før regen starter
+_staminaRegenSpd = 25;      // pr. sek
+_staminaRegenDelay = 1;     // sek. man skal vente efter sidste brug, før regen starter
 staminaRegenTimer = 0;
 
 staminaDisplay = stamina;   // bruges til smooth bar-animation

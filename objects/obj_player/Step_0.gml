@@ -1,6 +1,8 @@
+var _dt = delta_time / 1000000;
+
 rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right);
 leftKey = keyboard_check(ord("A")) or keyboard_check(vk_left);
-jumpKey = keyboard_check(ord("W")) or keyboard_check(ord(" ")) or keyboard_check(vk_up);
+jumpKey = keyboard_check_pressed(ord("W")) or keyboard_check_pressed(ord(" ")) or keyboard_check_pressed(vk_up);
 
 collision = [obj_ground, obj_ground2]
 
@@ -21,16 +23,16 @@ if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
     yspd = -jumpSpd;
     isGrounded = false;
     stamina -= staminaDrainPerJump;
-    staminaRegenTimer = staminaRegenDelay;
+    staminaRegenTimer = _staminaRegenDelay;
 }
 }
 
 
 // Regen kun når man IKKE lige har brugt stamina, og man rører jorden
 if (staminaRegenTimer > 0) {
-    staminaRegenTimer -= 1;
+    staminaRegenTimer -= _dt;
 } else if (isGrounded) {
-    stamina += staminaRegenSpd;
+    stamina += _staminaRegenSpd * _dt;
 }
 
 stamina = clamp(stamina, 0, staminaMax);
@@ -60,8 +62,14 @@ if (place_meeting(x, y + yspd, collision)) {
     }
     yspd = 0;
     isGrounded = true;
+	CoyoteTimer = CoyoteMAX;
 } else {
-    isGrounded = false;
+	if (CoyoteTimer > 0){
+		CoyoteTimer -= _dt
+	}
+	else {
+	isGrounded = false;
+	}
 }
 y += yspd;
 
