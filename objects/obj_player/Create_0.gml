@@ -2,7 +2,7 @@
 moveSpd = 4;
 jumpSpd = 15;
 grav = 0.5;
-maxFallSpd = 24;
+maxFallSpd = 999;
 
 xspd = 0;
 yspd = 0;
