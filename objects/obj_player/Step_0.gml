@@ -19,7 +19,7 @@ if (cameraState == "intro") {
 var _horizKey = rightKey - leftKey;
 xspd = _horizKey * moveSpd;
 
-// Jump / climb kræver stamina
+// Jump
 if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
     yspd = -jumpSpd;
     isGrounded = false;
