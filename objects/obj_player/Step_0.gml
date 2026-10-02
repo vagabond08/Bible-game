@@ -99,3 +99,10 @@ y += yspd;
         camera_set_view_pos(view_camera[0], _camX, _camY);
     }
 #endregion
+
+//her er koden for at klatre op af vines
+
+
+
+
+
