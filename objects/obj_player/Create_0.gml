@@ -11,6 +11,11 @@ isGrounded = false;
 CoyoteTimer = 0;
 CoyoteMAX = 0.2;
 
+isClimbing = false;
+climbSpd = 2.5;          // hastighed man klatrer op/ned med
+climbStaminaDrain = 4;   // pr. sekund mens man aktivt klatrer
+vineSlideSpd = 0.5;      // langsomt glid nedad når man bare hænger i vinen uden input
+
 // Stamina
 staminaMax = 100;
 stamina = staminaMax;
