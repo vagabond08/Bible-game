@@ -9,7 +9,7 @@ yspd = 0;
 
 isGrounded = false;
 CoyoteTimer = 0;
-CoyoteMAX = 0.2;
+CoyoteMAX = 0.15;
 
 isClimbing = false;
 climbSpd = 2.5;          // hastighed man klatrer op/ned med
