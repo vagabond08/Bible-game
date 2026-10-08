@@ -15,21 +15,24 @@ isClimbing = _touchingVine && (upKeyHeld || downKey);
 
 isClimbing = _touchingVine;
 
-if (isClimbing) {
+if (isClimbing) 
+{
     var _vertKey = downKey - upKeyHeld;
 
-    if (_vertKey != 0) {
+    if (_vertKey != 0){
         yspd = _vertKey * climbSpd;
+		staminaRegenTimer = _staminaRegenDelay;
 
         if (stamina > 0) {
             stamina -= climbStaminaDrain * _dt;
         }
-    } else {
+    } 
+	else {
         yspd = vineSlideSpd;
     }
 
-    isGrounded = true;
-} else {
+} 
+else {
     yspd += grav;
     yspd = min(yspd, maxFallSpd);
 }
@@ -42,7 +45,7 @@ if (cameraState == "intro") {
     var _horizKey = rightKey - leftKey;
     xspd = _horizKey * moveSpd;
 
-    // Jump - springer af vinen hvis man trykker almindeligt hop
+    // Jump code
     if (jumpKey && isGrounded && stamina >= staminaDrainPerJump) {
         yspd = -jumpSpd;
         isGrounded = false;
@@ -51,7 +54,7 @@ if (cameraState == "intro") {
         staminaRegenTimer = _staminaRegenDelay;
     }
 }
-
+// dev tool husk at fjern
 if (secretKey) {
     yspd = -jumpSpd * 0.5
 }
@@ -88,8 +91,11 @@ if (place_meeting(x, y + yspd, collision)) {
     while (!place_meeting(x, y + sign(yspd), collision)) {
         y += sign(yspd);
     }
-    yspd = 0;
-    isGrounded = true;
+    if yspd > 0{
+		isGrounded = true;
+	}
+	
+	yspd = 0;
     CoyoteTimer = CoyoteMAX;
 } else {
     if (CoyoteTimer > 0) {
