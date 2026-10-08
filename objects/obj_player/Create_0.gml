@@ -1,3 +1,5 @@
+global. pause = false
+
 // Variables for movement
 moveSpd = 4;
 jumpSpd = 15;

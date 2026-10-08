@@ -1,3 +1,16 @@
+pausebuttom = keyboard_check_pressed(ord("M"))
+
+if (pausebuttom){
+if (global.pause == true){
+global.pause = false
+}
+else{
+global.pause = true
+}
+}
+
+if (global.pause == false){
+
 var _dt = delta_time / 1000000;
 
 rightKey = keyboard_check(ord("D")) or keyboard_check(vk_right);
@@ -128,3 +141,4 @@ y += yspd;
         camera_set_view_pos(view_camera[0], _camX, _camY);
     }
 #endregion
+}
