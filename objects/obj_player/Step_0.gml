@@ -1,4 +1,4 @@
-pausebuttom = keyboard_check_pressed(ord("M"))
+pausebuttom = keyboard_check_pressed(vk_escape)
 
 if (pausebuttom){
 if (global.pause == true){
