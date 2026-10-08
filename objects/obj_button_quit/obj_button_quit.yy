@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_button_default",
-    "path":"sprites/spr_button_default/spr_button_default.yy",
+    "name":"spr_cloud_big",
+    "path":"sprites/spr_cloud_big/spr_cloud_big.yy",
   },
   "spriteMaskId":null,
   "visible":true,
