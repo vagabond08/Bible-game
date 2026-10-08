@@ -34,3 +34,21 @@ draw_rectangle(
 );
 
 draw_set_color(c_white);
+
+// Pause GUI
+var _shown_x = 960;
+var _shown_y = 540;
+var _home_x = 0;
+var _home_y = -100;
+
+if (global.pause) {
+    var _gw = display_get_gui_width();
+    var _gh = display_get_gui_height();
+
+    // Darken everything
+    draw_set_alpha(0.6);
+    draw_set_color(c_black);
+    draw_rectangle(0, 0, _gw, _gh, false);
+    draw_set_alpha(1);
+    draw_set_color(c_white);
+}
