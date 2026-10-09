@@ -12,7 +12,9 @@ walking = false
 
 isGrounded = false;
 CoyoteTimer = 0;
-CoyoteMAX = 0.15;
+CoyoteMAX = 0; // test uden coyote
+//CoyoteMAX = 0.15;
+
 
 isClimbing = false;
 climbSpd = 2.5;          // hastighed man klatrer op/ned med
