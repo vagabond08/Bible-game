@@ -8,6 +8,7 @@ maxFallSpd = 999;
 
 xspd = 0;
 yspd = 0;
+walking = false
 
 isGrounded = false;
 CoyoteTimer = 0;

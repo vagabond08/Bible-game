@@ -80,10 +80,14 @@ if (_key_right) {
 }
 // Check if moving horizontally
 if (xspd != 0) {
+	if walking == false{
+		image_index = 1
+		walking = true}
     image_speed = 1; // Play animation
 } else {
+	walking = false
     image_speed = 0; // Freeze animation
-    image_index = 0; // Optional: Reset to the very first frame (standing frame)
+    image_index = 0; // Reset to the very first frame (standing frame)
 }
 // dev tool husk at fjern
 if (secretKey) {
