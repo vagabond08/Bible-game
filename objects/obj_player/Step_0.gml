@@ -26,7 +26,7 @@ collision = [obj_ground, obj_ground2]
 var _touchingVine = place_meeting(x, y, obj_vines);
 isClimbing = _touchingVine && (upKeyHeld || downKey);
 
-isClimbing = _touchingVine;
+isClimbing = _touchingVine && (stamina > 0);
 
 if (isClimbing) 
 {
