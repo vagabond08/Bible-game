@@ -67,6 +67,24 @@ if (cameraState == "intro") {
         staminaRegenTimer = _staminaRegenDelay;
     }
 }
+
+// Get input (returns 1 if pressed, 0 if not)
+var _key_right = keyboard_check(vk_right) || keyboard_check(ord("D"));
+var _key_left  = keyboard_check(vk_left)  || keyboard_check(ord("A"));
+
+// Flip the sprite depending on the direction pressed
+if (_key_right) {
+    image_xscale = -1;  // Faces Right (default orientation)
+} else if (_key_left) {
+    image_xscale = 1; // Faces Left (mirrored)
+}
+// Check if moving horizontally
+if (xspd != 0) {
+    image_speed = 1; // Play animation
+} else {
+    image_speed = 0; // Freeze animation
+    image_index = 0; // Optional: Reset to the very first frame (standing frame)
+}
 // dev tool husk at fjern
 if (secretKey) {
     yspd = -jumpSpd * 0.5
