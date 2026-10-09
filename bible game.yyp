@@ -27,6 +27,8 @@
     {"id":{"name":"obj_button_controls","path":"objects/obj_button_controls/obj_button_controls.yy",},},
     {"id":{"name":"obj_button_menu","path":"objects/obj_button_menu/obj_button_menu.yy",},},
     {"id":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},},
+    {"id":{"name":"obj_button_pause_menu","path":"objects/obj_button_pause_menu/obj_button_pause_menu.yy",},},
+    {"id":{"name":"obj_button_pause_quit","path":"objects/obj_button_pause_quit/obj_button_pause_quit.yy",},},
     {"id":{"name":"obj_button_play","path":"objects/obj_button_play/obj_button_play.yy",},},
     {"id":{"name":"obj_button_quit","path":"objects/obj_button_quit/obj_button_quit.yy",},},
     {"id":{"name":"obj_controls","path":"objects/obj_controls/obj_controls.yy",},},
