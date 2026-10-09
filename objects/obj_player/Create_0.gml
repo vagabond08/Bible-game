@@ -13,7 +13,7 @@ walking = false
 isGrounded = false;
 CoyoteTimer = 0;
 CoyoteMAX = 0; // test uden coyote
-//CoyoteMAX = 0.15;
+CoyoteMAX = 0.15;
 
 
 isClimbing = false;
