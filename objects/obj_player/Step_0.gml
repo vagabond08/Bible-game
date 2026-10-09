@@ -74,9 +74,9 @@ var _key_left  = keyboard_check(vk_left)  || keyboard_check(ord("A"));
 
 // Flip the sprite depending on the direction pressed
 if (_key_right) {
-	sprite_index = spr_player_right;// Faces Right (default orientation)
+	sprite_index = spr_player_right_barn;// Faces Right (default orientation)
 } else if (_key_left) {
-    sprite_index = spr_player_left; // Faces Left (mirrored)
+    sprite_index = spr_player_left_barn; // Faces Left (mirrored)
 }
 // Check if moving horizontally
 if (xspd != 0) {
