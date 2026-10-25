@@ -1,3 +1,3 @@
 // DRAW GUI EVENT of obj_text
 draw_set_color(c_white);
-draw_text(100, 200, "Climb the mountain, and sacrifice your son for God!"); // Change this to your message
+draw_text(100, 200, "Climb the mountain, sacrifice your son for God!"); // Change this to your message
